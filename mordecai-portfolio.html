@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="section">
+            <div class="terminal-line">
+                <span id="typing-text"></span><span class="cursor">_</span>
+            </div>
+            <h1>MORDECAI ARAYA</h1>
+            <p class="subtitle">📍 SANTA BARBARA, CA //
+                COMPUTER ARCHITECTURE // ML RESEARCH // & MORE</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/mordecaai" target="_blank">► GITHUB</a>
+                <a href="https://www.linkedin.com/in/mordecai-araya/" target="_blank">► LINKEDIN</a>
+                <a href="mailto:mordecai@ucsb.edu" target="_blank">► CONTACT</a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <section class="section">
+            <div class="section-header">
+                <span>▣</span>
+                <h2>ABOUT.TXT</h2>
+            </div>
+            <p class="about-text">
+                <p style="margin-bottom: 1rem;">
+                    I'm interested in the intersection of Hardware and Machine Learning. I strive to understand from the ground up, from Computer Architecture to Neural Networks, 
+                    crucial for our ever changing world. Whether tracing issues in robotics or researching neural networks: I'm excited to always learn.    
+                </p>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <div class="section-header">
+                <span>▣</span>
+                <h2>PROJECTS.DIR</h2>
+            </div>
+            <div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <span class="chevron">›</span>
+                        <span>Gaucho Guardian Project</span>
+                    </div>
+                    <p class="project-desc">Automated course scheduling assistant for UCSB students.</p>
+                    <span class="tech-stack">[Python, APIs]</span>
+                </div>
+                <a href="robotic-car-page.html" class="project-link">
+                    <div class="project-item">
+                        <div class="project-title">
+                            <span class="chevron" >›</span>
+                            <span>Autonomous Robotic Car</span>
+                    </div>
+                </a>
+                    <p class="project-desc">Real-time object detection using sensors, logic, and arithmetic. Developed from scratch using VEX Chassis.</p>
+                    <span class="tech-stack">[Systems, C++, Analog & Digital Sensors]</span>
+                </div>
+                <a href="https://www.instagram.com/mordo.jpg/" class="project-link" target="_blank">
+                    <div class="project-item">
+                        <div class="project-title">
+                            <span class="chevron">›</span>
+                            <span>Photography & Editing</span>
+                        </div>
+                        <p class="project-desc">Freelancing, Photo & Video editing, and Social Media.</p>
+                        <span class="tech-stack">[Lightroom, DaVinci Resolve, Canva]</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="section">
+            <div class="section-header">
+                <span>▣</span>
+                <h2>RESEARCH.LOG</h2>
+            </div>
+            <div>
+                <div class="research-item">
+                    <h3 class="research-title">CSEP & Dynamo Lab, AI-Brain Alignment Research</h3>
+                    <span class="research-venue">Developed methodology to evaluate neural activation to streamline fMRI data by > 50% simultaneously maintaining image reconstruction performance.</span>
+                </div>
+                <div class="research-item">
+                    <h3 class="research-title">Arch Lab @ UCSB</h3>
+                    <span class="research-venue">Researching efficient computer architecture applications for simulating bionic vision frameworks.</span>
+                </div>
+                <div class="research-item">
+                    <h3 class="research-title">Natural Language Processing </h3>
+                    <span class="research-venue">Deciphering ancient Meroitic using NLP and comparative historical lingustics. </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photography -->
+        <section class="section">
+            <div class="section-header">
+                <span>▣</span>
+                <h2>PHOTOGRAPHY.IMG</h2>
+            </div>
+            <div class="photo-grid">
+                <a href="#" class="photo-item">
+                <img src="DSC_0629.jpg" alt="Dahlak FC In-game Action Shot">
+                </a>
+
+                <a href="#" class="photo-item">
+                <img src="DSC_0042.jpg" alt="Autonomous Robotic Car">
+                </a>
+
+                <a href="#" class="photo-item">
+                <img src="IMG_5348.jpg" alt="Palace of Fine Arts, San Francisco">
+                </a>
+
+                <a href="#" class="photo-item">
+                <img src="DSC_1173.jpg" alt="BMW E36 M3 at Monterey Car Week">
+                </a>
+
+                <a href="#" class="photo-item">
+                <img src="IMG_9985.jpg" alt="UCSB Men Soccer Finals Shot">
+                </a>
+                
+                <a href="#" class="photo-item">
+                <img src="_MG_1088 - Copy.jpg" alt="Oakland Tribute Tower">
+                </a>
+                                
+                <a href="#" class="photo-item">
+                <img src="vbb-gray.png" alt="Volleyball Team Shot">
+                </a>
+                                
+                <a href="#" class="photo-item">
+                <img src="DSC_1206.JPG" alt="Countach">
+                </a>
+                 
+                <a href="#" class="photo-item">
+                <img src="vbb edits.png" alt="Volleyball Graphic">
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p> ARAYA © 2025</p>
+        </div>
+    </div>
+
+    <script>
+        // Typing animation
+        const text = '> WELCOME!';
+        const typingElement = document.getElementById('typing-text');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 50);
+            }
+        }
+
+        type();
+    </script>
+</body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #d1d5db;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 2rem;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Scanline effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.05) 2px, rgba(255,255,255,0.05) 4px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .section {
+            border: 1px solid #374151;
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin-bottom: 3rem;
+        }
+
+        .terminal-line {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-bottom: 1rem;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            color: #fff;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: #9ca3af;
+            font-size: 0.875rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #fff;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #9ca3af;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .about-text {
+            color: #9ca3af;
+            line-height: 1.6;
+        }
+
+        .project-item, .research-item {
+            border-left: 2px solid #374151;
+            padding: 0.5rem 0 0.5rem 1rem;
+            margin-bottom: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .project-item:hover, .research-item:hover {
+            border-left-color: #9ca3af;
+        }
+
+        .project-title, .research-title {
+            color: #fff;
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .project-desc {
+            color: #9ca3af;
+            font-size: 0.875rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-stack {
+            color: #4b5563;
+            font-size: 0.75rem;
+        }
+
+        .research-venue {
+            color: #4b5563;
+            font-size: 0.75rem;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .photo-item {
+            aspect-ratio: 1;
+            background-color: #111827;
+            border: 1px solid #1f2937;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #374151;
+            font-size: 0.75rem;
+            transition: border-color 0.3s;
+        }
+
+        .photo-item:hover {
+            border-color: #4b5563;
+        }
+
+        .footer {
+            text-align: center;
+            color: #4b5563;
+            font-size: 0.75rem;
+            padding: 2rem 0;
+        }
+
+        .chevron {
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.75rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="section">
+            <div class="terminal-line">
+                <span id="typing-text"></span><span class="cursor">_</span>
+            </div>
+            <h1>MORDECAI ARAYA</h1>
+            <p class="subtitle">📍 SANTA BARBARA, CA //
+                COMPUTER ARCHITECTURE // ML RESEARCH // & MORE</p>
+            
+            <div class="social-links">
+                <a href="https://github.com/mordecaai">► GITHUB</a>
+                <a href="https://www.linkedin.com/in/mordecai-araya/">► LINKEDIN</a>
+                <a href="mailto:mordecai@ucsb.edu">► CONTACT</a>
+            </div>
+        </div>
+
+        <!-- About -->
+        <section class="section">
+            <div class="section-header">
+                <span>▣</span>
+                <h2>ABOUT.TXT</h2>
+            </div>
+            <p class="about-text">
+                <p style="margin-bottom: 1rem;">
+                    I'm interested in the intersection of Hardware and Machine Learning. I strive to understand from the ground up, from Computer Architecture to Neural Networks, 
+                    crucial for our ever changing world. Whether tracing issues in robotics or researching neural networks: I'm excited to always learn.    
+                </p>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <div class="section-header">
+                <span>▣</span>
+                <h2>PROJECTS.DIR</h2>
+            </div>
+            <div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <span class="chevron">›</span>
+                        <span></span>
+                    </div>
+                    <p class="project-desc">Streamlined fMRI data for image reconstruction, targeted voxel optimization using evolutionary algorithms</p>
+                    <span class="tech-stack">[PyTorch, CUDA]</span>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <span class="chevron">›</span>
+                        <span>FPGA Accelerator</span>
+                    </div>
+                    <p class="project-desc">Custom hardware accelerator for matrix operations</p>
+                    <span class="tech-stack">[Verilog, Xilinx]</span>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <span class="chevron">›</span>
+                        <span>Edge AI System</span>
+                    </div>
+                    <p class="project-desc">Real-time object detection on embedded systems</p>
+                    <span class="tech-stack">[TensorFlow Lite, ARM]</span>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">
+                        <span class="chevron">›</span>
+                        <span>Quantum Circuit Sim</span>
+                    </div>
+                    <p class="project-desc">Simulation framework for quantum gate operations</p>
+                    <span class="tech-stack">[Python, NumPy]</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research -->
+        <section class="section">
+            <div class="section-header">
+                <span>▣</span>
+                <h2>RESEARCH.LOG</h2>
+            </div>
+            <div>
+                <div class="research-item">
+                    <h3 class="research-title">AI-Brain Alignment</h3>
+                    <span class="research-venue">NeurIPS 2024 Workshop</span>
+                </div>
+                <div class="research-item">
+                    <h3 class="research-title">Hardware-Aware Neural Network Pruning</h3>
+                    <span class="research-venue">ICML 2024</span>
+                </div>
+                <div class="research-item">
+                    <h3 class="research-title">Optical Computing for Neural Networks</h3>
+                    <span class="research-venue">Nature Electronics</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photography -->
+        <section class="section">
+            <div class="section-header">
+                <span>▣</span>
+                <h2>PHOTOGRAPHY.IMG</h2>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item"></div>
+                <div class="photo-item">IMG_002.RAW</div>
+                <div class="photo-item">IMG_003.RAW</div>
+                <div class="photo-item">IMG_004.RAW</div>
+                <div class="photo-item">IMG_005.RAW</div>
+                <div class="photo-item">IMG_006.RAW</div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p> ARAYA // © 2025</p>
+        </div>
+    </div>
+
+    <script>
+        // Typing animation
+        const text = '>... WELCOME!';
+        const typingElement = document.getElementById('typing-text');
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingElement.textContent += text.charAt(index);
+                index++;
+                setTimeout(type, 50);
+            }
+        }
+
+        type();
+    </script>
+</body>
+</html>

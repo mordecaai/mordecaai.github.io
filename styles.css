@@ -206,3 +206,10 @@
             color: inherit;
             display: block;
         }
+
+        .video-container {
+            display: flex;
+            justify-content: center; /* Centers horizontally */
+         /* Example: centers in the full viewport height */
+
+        }

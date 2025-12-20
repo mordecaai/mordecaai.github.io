@@ -209,7 +209,19 @@
 
         .video-container {
             display: flex;
-            justify-content: center; /* Centers horizontally */
-         /* Example: centers in the full viewport height */
+            justify-content: center;
 
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        html {
+          scrollbar-width: none;
+        }
+
+        /* For IE and Edge (older versions) */
+        body {
+          -ms-overflow-style: none;
         }

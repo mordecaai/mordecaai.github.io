@@ -10,12 +10,9 @@
     <div class="container">
         <!-- Header -->
         <div class="section">
-            <div class="terminal-line">
-                <span id="typing-text"></span><span class="cursor">_</span>
-            </div>
             <h1>MORDECAI ARAYA</h1>
-            <p class="subtitle">📍 SANTA BARBARA, CA //
-                COMPUTER ARCHITECTURE // ML RESEARCH // & MORE</p>
+            <p class="subtitle">UC SANTA BARBARA //
+                COMPUTER ENGINEERING // MACHINE LEARNING // & RESEARCH </p>
             
             <div class="social-links">
                 <a href="https://github.com/mordecaai" target="_blank">► GITHUB</a>
@@ -32,8 +29,7 @@
             </div>
             <p class="about-text">
                 <p style="margin-bottom: 1rem;">
-                    I'm interested in the intersection of Hardware and Machine Learning. I strive to understand from the ground up, from Computer Architecture to Neural Networks, 
-                    a skill I believe is crucial for our ever changing world. Whether tracing issues with robotics or researching neural networks: I'm always excited to learn.    
+                    I'm interested in the intersection of Hardware and Machine Learning. Whether tracing issues with robotics or researching neural networks: I'm dedicated to always learning more.    
                 </p>
         </section>
 
@@ -117,22 +113,5 @@
             <p> ARAYA © 2025</p>
         </div>
     </div>
-
-    <script>
-        // Typing animation
-        const text = '> WELCOME!';
-        const typingElement = document.getElementById('typing-text');
-        let index = 0;
-
-        function type() {
-            if (index < text.length) {
-                typingElement.textContent += text.charAt(index);
-                index++;
-                setTimeout(type, 50);
-            }
-        }
-
-        type();
-    </script>
 </body>
 </html>

@@ -42,7 +42,7 @@
         }
 
         h1 {
-            font-size: 2.25rem;
+            font-size: 2.5rem;
             color: #fff;
             letter-spacing: 0.1em;
             margin-bottom: 0.5rem;
@@ -50,7 +50,7 @@
 
         .subtitle {
             color: #9ca3af;
-            font-size: 0.875rem;
+            font-size: 1rem;
         }
 
         .social-links {
@@ -76,7 +76,7 @@
             gap: 0.5rem;
             color: #9ca3af;
             margin-bottom: 1rem;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
         }
 
         .about-text {
@@ -91,27 +91,65 @@
             transition: border-color 0.3s;
         }
 
-        .project-item:hover, .research-item:hover {
-            border-left-color: #9ca3af;
-        }
+.project-item, .research-item {
+    border-left: 2px solid #374151;
+    padding: 0.5rem 0 0.5rem 1rem;
+    margin-bottom: 1rem;
+    transition: border-color 0.3s;
+}
 
-        .project-title, .research-title {
-            color: #fff;
-            margin-bottom: 0.25rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+.project-item:hover, .research-item:hover {
+    border-left-color: #9ca3af;
+}
+
+.project-title, .research-title {
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.project-title span:not(.chevron) {
+    color: #d3f2ff;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.project-title span:not(.chevron):hover {
+    color: #7dd3fc;
+}
+
+.research-title {
+    color: #d3f2ff;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.research-title:hover {
+    color: #7dd3fc;
+}
+
+.project-title a {
+    color: #c1ecff;
+    text-decoration: none;
+    font-size: 1.25rem;
+    transition: color 0.3s;
+}
+
+.project-title a:hover {
+    color: #70c8e8;
+}
 
         .project-desc {
-            color: #9ca3af;
-            font-size: 0.875rem;
+            color: #fff;
+            font-size: 1rem;
             margin-bottom: 0.5rem;
         }
 
         .tech-stack {
-            color: #4b5563;
-            font-size: 0.75rem;
+            color: #9ca3af;
+            font-size: .9rem;
         }
 
         .research-venue {
@@ -150,7 +188,7 @@
         .footer {
             text-align: center;
             color: #4b5563;
-            font-size: 0.75rem;
+            font-size: 1rem;
             padding: 2rem 0;
         }
 

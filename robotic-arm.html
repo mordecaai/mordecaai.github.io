@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARM-01 Robotic Arm</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <h1></h1>
+
+    <section class="section">
+        <div class="section-header">
+            <span>▣</span>
+            <h2>ARM-01 — Robotic Arm Project</h2>
+        </div> <!-- Close section-header -->
+
+        <br>
+        <div class="about-text">
+            <p style="margin-bottom: 1rem;">
+                Built a 6-servo robotic arm from the ground up using an Arduino Uno and PCA9685 PWM servo driver. 
+                Designed in CAD and 3D printed, the arm combines mechanical design, electronics, and real-time 
+                software to execute precise assistive tasks in any workspace.
+            </p>
+            <p>Technical Implementation:</p>
+                <p>     · 6 servo motors mapped across PCA9685 channels (mix of standard and 360° continuous rotation)</p>
+                <p>     · PWM/angle conversion with power-controlled smooth motion interpolation</p>
+                <p>     · Serial command parsing interface for real-time arm control</p>
+                <p>     · Forward kinematics-based collision boundary checking</p>
+                <p>     · Homing routines and claw angle hard limits for safe operation</p>
+                <p>     · Programmed demo sequences showcasing full range of motion</p>
+            <br>
+            <p>
+                Results:
+            </p>
+            <p>
+                Successfully demonstrated precise multi-axis control with smooth, power-managed movement.
+                ARM-01 was presented at the ECE Design Fair and recognized for its hardware complexity
+                and build quality among 100 students (teams of 3).
+            </p>
+            <br>
+
+            <!-- Award -->
+            <p>&nbsp;<strong>Most Sophisticated Hardware Award</strong> — ECE Design Fair &nbsp;·&nbsp;</p>
+
+            <br><br>
+            <div class="photo-grid">
+                <a class="photo-item">
+                    <img src="arm_photo_1.jpg" alt="ARM-01 Side View">
+                </a>
+
+                <a class="photo-item">
+                    <img src="arm_photo_2.jpg" alt="ARM-01 Isometric">
+                </a>
+
+                <a class="photo-item">
+                    <img src="arm_photo_3.jpg" alt="ARM-01 Top View">
+                </a>
+            </div> <!-- Close photo-grid -->
+            <br>
+            <div class="video-container">
+                <video width="720" height="405" controls poster="arm_demo_poster.jpg">
+                    <source src="arm_demo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <br><br>
+
+            <!-- PDF -->
+            <div class="section-header">
+                <span>▣</span>
+                <h2>Documentation</h2>
+            </div>
+            <br>
+            <p>
+                <a href="arm01_report.pdf" target="_blank">View Project Proposal (PDF)</a>
+            </p>
+
+        </div> <!-- Close about-text -->
+
+        <div class="social-links">
+            <a href="index.html">◄ Go Back</a>
+        </div>
+    </section> <!-- Close section -->
+
+    <!-- Footer -->
+</div>
+
+    <div class="footer">
+    <p> ARAYA © 2025</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bionic Vision Research</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1></h1>
+
+    <section class="section">
+        <div class="section-header">
+            <span>▣</span>
+            <h2>Bionic Vision: Delay-Based Processing for Retinal Implants</h2>
+        </div>
+
+        <div class="about-text">
+            <p style="margin-bottom: 1rem;">
+                About 43 million people worldwide are blind, many of them because the photoreceptors in their eyes
+                have stopped working even though the rest of the visual pathway is intact. Retinal implants get
+                around this by stimulating the surviving neurons directly, producing phosphenes, small points of
+                light the brain reads as visual information. The catch is that standard frame-based image processing
+                draws too much power and takes up too much space to fit inside an implantable device.
+            </p>
+
+            <p style="margin-bottom: 1rem;">
+                This project looks at a different approach: a delay-based architecture, where information is carried
+                by the timing of signals instead of voltage levels, closer to how neurons actually communicate. We
+                built an end-to-end pipeline on the NVIDIA Jetson Orin Nano that takes a video feed, down samples it,
+                quantizes it down to a few brightness levels, encodes it into spikes for a spiking neural network,
+                and drives a stimulation pattern for a retinal prosthesis. The down sampling step alone cuts the
+                spatial data footprint by around 400x, and we can play it back at over 15 frames per second, fast
+                enough for real-time, comfortable scene perception. The goal is a working baseline other researchers
+                can build on for energy-efficient, delay-based bionic vision.
+            </p>
+
+            <p style="margin-bottom: 0.5rem;"><strong>Mock event camera.</strong> We built software that mimics a
+            real event-based (DVS) camera, taking standard video and converting it into sparse, quantized packets of
+            information through down sampling, 4-level brightness and color quantization, and frame differencing.
+            The output is a 96×54 spike tensor, close to what an actual DVS sensor produces.</p>
+
+            <p style="margin-bottom: 0.5rem;"><strong>Spiking neural network.</strong> That event data feeds into an
+            SNN, which represents information as the timing of voltage pulses rather than floating-point numbers.
+            That's both closer to how biological neurons work and far cheaper to compute, which is the whole point
+            when you're trying to run this on something small enough to implant or wear.</p>
+
+            <p style="margin-bottom: 1.5rem;"><strong>Hardware.</strong> Most work in this space assumes a full
+            workstation with a dedicated GPU, which isn't something a person can wear day to day. We built and
+            tested the pipeline on an NVIDIA Jetson Orin Nano instead, since it's compact and efficient enough for
+            local, real-time use.</p>
+
+            <div class="section-header">
+                <span>▣</span>
+                <h2>Results</h2>
+            </div>
+
+            <p style="margin-bottom: 1rem;">
+                A single 1920×1080 frame reduces to a 96×54 quantized matrix, a 400x cut in pixel count. Add 2-bit
+                quantization and a one-minute clip that started at 40MB comes out to roughly 1-2MB, a 27x reduction
+                in our current unpacked storage format. That's not the ceiling either: once we bit-pack the 2-bit
+                data for the hardware version we're building next, the same file drops to around 390KB, closer to
+                100x.
+            </p>
+
+            <p style="margin-bottom: 1.5rem;">
+                On the SNN side, we implemented a leaky integrate-and-fire model in PyRTL and used it to build a
+                neuro-inspired edge detection filter based on center-surround receptive fields. We deployed that to
+                an Arty A7 100T FPGA, generating Verilog from PyRTL to test the SNN on real hardware.
+            </p>
+
+            <div class="section-header">
+                <span>▣</span>
+                <h2>Where It's Headed</h2>
+            </div>
+
+            <p style="margin-bottom: 1rem;">
+                We built a working pipeline that turns ordinary video into sparse, quantized spike data, cutting
+                pixel count by 400x and file size by up to 27x in its current form. It shows this event-based
+                approach can meaningfully shrink the data a bionic vision system needs to process in real time,
+                which is exactly what you need for something low-power and wearable.
+            </p>
+
+            <p style="margin-bottom: 1.5rem;">
+                Next is bit-packed storage, to close the gap between our current 27x and the 100x we know is
+                possible. After that we want to connect the DVS emulation pipeline directly to the finished SNN,
+                validate the full software path, and move both onto the Jetson Orin Nano alongside a real event
+                camera. Longer term, we want better testbenches for timing jitter and scalability, so we can
+                actually evaluate this as a delay-based computing platform and not just a compression trick.
+            </p>
+
+            <div class="section-header">
+                <span>▣</span>
+                <h2>Documentation</h2>
+            </div>
+            <br>
+            <p style="margin-bottom: 0.5rem;">
+                <a href="https://mordecaai.github.io/Vision-and-Neuromorphic-Architecture-Research/dvs_demo.html" target="_blank">View Demo</a>
+            </p>
+            <p>
+                <a href="https://drive.google.com/file/d/1e4EoI8_hAf9EPmrk7DhrPPEmKCZaa0dS/view?usp=sharing" target="_blank">View Research Poster (PDF)</a>
+            </p>
+
+        </div>
+
+        <div class="social-links">
+            <a href="index.html">◄ Go Back</a>
+        </div>
+    </section>
+</div>
+
+<div class="footer">
+    <p>ARAYA © 2025</p>
+</div>
+</body>
+</html>

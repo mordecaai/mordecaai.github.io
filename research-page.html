@@ -8,12 +8,12 @@
 </head>
 <body>
 <div class="container">
-    <h1></h1>
+    <h1>Bionic Vision: Delay-Based Processing for Retinal Implants</h1>
 
     <section class="section">
         <div class="section-header">
             <span>▣</span>
-            <h2>Bionic Vision: Delay-Based Processing for Retinal Implants</h2>
+    
         </div>
 
         <div class="about-text">
@@ -66,7 +66,7 @@
 
             <p style="margin-bottom: 1.5rem;">
                 On the SNN side, we implemented a leaky integrate-and-fire model in PyRTL and used it to build a
-                neuro-inspired edge detection filter based on center-surround receptive fields. We deployed that to
+                neuro-inspired edge detection filter based on center-surround receptive fields. This was deployed to
                 an Arty A7 100T FPGA, generating Verilog from PyRTL to test the SNN on real hardware.
             </p>
 
@@ -83,11 +83,10 @@
             </p>
 
             <p style="margin-bottom: 1.5rem;">
-                Next is bit-packed storage, to close the gap between our current 27x and the 100x we know is
-                possible. After that we want to connect the DVS emulation pipeline directly to the finished SNN,
-                validate the full software path, and move both onto the Jetson Orin Nano alongside a real event
-                camera. Longer term, we want better testbenches for timing jitter and scalability, so we can
-                actually evaluate this as a delay-based computing platform and not just a compression trick.
+                Next is bit-packed storage, this will enable us to bolster our 27x to use our DVS emulation pipeline 
+                directly to asynchronosuly train SNN, and validate the full software path. All this to impleent
+                 testbenches for timing jitter and scalability, to evaluate it's viability as  a delay-based computing 
+                 platform for real-time bionic vision.
             </p>
 
             <div class="section-header">
@@ -95,13 +94,12 @@
                 <h2>Documentation</h2>
             </div>
             <br>
-            <p style="margin-bottom: 0.5rem;">
-                <a href="https://mordecaai.github.io/Vision-and-Neuromorphic-Architecture-Research/dvs_demo.html" target="_blank">View Demo</a>
-            </p>
-            <p>
-                <a href="https://drive.google.com/file/d/1e4EoI8_hAf9EPmrk7DhrPPEmKCZaa0dS/view?usp=sharing" target="_blank">View Research Poster (PDF)</a>
-            </p>
-
+<p style="margin-bottom: 0.5rem;">
+    <a href="https://mordecaai.github.io/Vision-and-Neuromorphic-Architecture-Research/dvs_demo.html" class="doc-link" target="_blank">View Demo</a>
+</p>
+<p>
+    <a href="https://drive.google.com/file/d/1e4EoI8_hAf9EPmrk7DhrPPEmKCZaa0dS/view?usp=sharing" class="doc-link" target="_blank">View Research Poster (PDF)</a>
+</p>
         </div>
 
         <div class="social-links">
